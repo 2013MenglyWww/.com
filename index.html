@@ -1,234 +1,210 @@
 
 <!DOCTYPE html>
-<html lang="km">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ហាងលក់ឥវ៉ាន់ ហើយនិងមេរៀន</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Khmer OS Siemreap', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch By ZammLaex M.Kom-</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 
-    body {
-      margin: 0;
-      background-color: #f9f9f9;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #1e88e5;
-      padding: 20px 0;
-      color: white;
-      text-align: center;
-    }
+        body, html {
+            background: #000000;
+            font-family: 'Trebuchet MS', sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    nav {
-      background-color: #1565c0;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .hero {
-      background-color: #e3f2fd;
-      padding: 40px 20px;
-      text-align: center;
-    }
+        .logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* រូបមូល */
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
+        .logo:hover {
+            transform: scale(1.02);
+        }
 
-    .product {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+        .hacker-signature {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
 
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+        .hacker-signature .hacked-by {
+            font-family: 'Reggae One', cursive;
+            color: red;
+        }
 
-    .product-content {
-      padding: 15px;
-      text-align: center;
-    }
+        .hacker-signature .hacker-name {
+            font-family: 'Reggae One', cursive;
+            color: white;
+        }
 
-    .product h3 {
-      margin: 10px 0;
-    }
+        .divider {
+            width: 80%;
+            max-width: 600px;
+            height: 2px;
+            margin: 30px auto;
+            background: linear-gradient(to right, transparent, #ff0000, transparent);
+            border: none;
+            border-radius: 2px;
+        }
 
-    .product p {
-      color: #388e3c;
-      font-weight: bold;
-    }
+        .message-container {
+            margin-bottom: 25px;
+        }
 
-    .product button {
-      margin: 10px;
-      padding: 10px;
-      background-color: #1e88e5;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-align: center;
-      width: 100%;
-    }
+        .ambatukam-text {
+            color: #FF0000;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+            letter-spacing: 2px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
 
-    .product button:hover {
-      background-color: #0d47a1;
-    }
+        .challenge-text {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
 
-    footer {
-      text-align: center;
-      background-color: #263238;
-      color: white;
-      padding: 15px;
-      margin-top: 30px;
-    }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 25px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
 
-    .qr-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      text-align: center;
-      z-index: 999;
-    }
+        .palestine-text {
+            color: #FFFFFF;
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-family: 'Waterfall', cursive;
+            margin-top: 15px;
+            text-shadow: 0 0 10px rgba(151, 233, 0, 0.7);
+            animation: pulse 2s infinite;
+        }
 
-    .qr-popup img {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-    }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px rgba(151, 233, 0, 0.7); }
+            50% { text-shadow: 0 0 20px rgba(151, 233, 0, 1); }
+            100% { text-shadow: 0 0 10px rgba(151, 233, 0, 0.7); }
+        }
 
-    .close-btn {
-      margin-top: 10px;
-      background: #e74c3c;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+        /* Desktop specific styles */
+        @media (min-width: 768px) {
+            .ambatukam-text {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
 
-    .tg-button {
-      display: inline-block;
-      background-color: #27ae60;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-  </style>
-  <script>
-    function showQR() {
-      document.getElementById('qr').style.display = 'block';
-    }
+            .challenge-text {
+                font-size: 1.3rem;
+                padding: 0 100px;
+            }
 
-    function closeQR() {
-      document.getElementById('qr').style.display = 'none';
-    }
-  </script>
+            .palestine-text {
+                font-size: 2.8rem;
+                letter-spacing: 5px;
+            }
+
+            .hacker-signature {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .logo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .ambatukam-text {
+                font-size: 1.5rem;
+            }
+
+            .challenge-text {
+                font-size: 1rem;
+            }
+
+            .palestine-text {
+                font-size: 1.8rem;
+            }
+
+            .hacker-signature {
+                font-size: 1.1rem;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <h1>ហាងលក់ឥវ៉ាន់</h1>
-</header>
-
-<nav>
-  <a href="#">ទំព័រដើម</a>
-  <a href="#">ផលិតផល</a>
-  <a href="#">អំពីយើង</a>
-  <a href="#">ទំនាក់ទំនង</a>
-</nav>
-
-<section class="hero">
-  <h2>ស្វាគមន៍មកកាន់ហាងរបស់យើង!</h2>
-  <p>តម្លៃសមរម្យ, គុណភាពខ្ពស់ និងសេវាកម្មល្អ!</p>
-</section>
-
-<section class="products">
-  <div class="product">
-    <img src="https://i.imgur.com/FaehdZE.jpeg/300x400" alt="Product 1">
-    <div class="product-content">
-      <h3>Tool DDOS.v2 (យកទៅបិតវេបសាយគេ)</h3>
-      <p>$1</p>
-      <button onclick="showQR()">ទិញឥវ៉ាន់</button>
+    <div class="main-container">
+        <img src="https://i.imgur.com/igJGp1d.jpeg" alt="Logo" class="logo">
+        
+        <div class="hacker-signature">
+            <span class="hacked-by">Hacked KH</span>
+            <span class="hacker-name">Hacker BL4Z3R</span>
+        </div>
+        
+        <hr class="divider">
+        
+        <div class="message-container">
+            <p class="ambatukam-text">
+                CAMBODIA  ANONYMOUS 
+            </p>
+            <p class="challenge-text">
+                WE  ARE  ANONYMOUS CAMBODIA  WE  ARE LEGION WE FIGHT CORRUPTION WE FIGHT FOR THE TRUTH WE FIGHT FOR FREEDOM WE DO NOT FORGIVE WE DO NOT FORGET EXPECT US
+            </p>            
+            
+            <audio controls autoplay class="audio-player">
+                <source src="https://h.top4top.io/m_3429w41be0.mp3" type="audio/mpeg">
+            </audio>
+            
+            <p class="palestine-text">
+                DARKNET SYNDICATE
+            </p>
+        </div>
     </div>
-  </div>
-  <div class="product">
-    <img src="https://i.imgur.com/hvH1Dh3.jpeg/0x1000" alt="Product 2">
-    <div class="product-content">
-      <h3>វគ្គសិក្សារគ្រុបមេរៀន(មានមេរៀន1000ជាងមេរៀន)</h3>
-      <p>$5</p>
-      <button onclick="showQR()">ទិញឥវ៉ាន់</button>
-    </div>
-  </div>
-  <div class="product">
-    <img src="https://i.imgur.com/phWmprM.png/300x200" alt="Product 3">
-    <div class="product-content">
-      <h3>YouTube Premium App</h3>
-      <p>$1.50</p>
-      <button onclick="showQR()">ទិញឥវ៉ាន់</button>
-    </div>
-  </div>
-  <div class="product">
-    <img src="https://i.imgur.com/VwJHIh1.jpeg/300x200" alt="Product 4">
-    <div class="product-content">
-      <h3>វគ្គសិក្សារ.Hacking</h3>
-      <p>$2</p>
-      <button onclick="showQR()">ទិញឥវ៉ាន់</button>
-    </div>
-  </div>
-  <div class="product">
-    <img src="https://i.imgur.com/tUpt614.jpeg/300x200" alt="Product 5">
-    <div class="product-content">
-      <h3>Call ចាប់ iP {ប្រើលើ iphone - pc}</h3>
-      <p>$1</p>
-      <button onclick="showQR()">ទិញឥវ៉ាន់</button>
-    </div>
-  </div>
-</section>
-
-<div class="qr-popup" id="qr">
-  <h3>ស្កេន QR ដើម្បីបង់ប្រាក់</h3>
-  <img src="https://i.imgur.com/N6Y7PFu.jpeg" alt="QR Code">
-  <p>សូមស្កេន QR និងចូលទៅ Telegram Bot ដើម្បីបញ្ជូនវិកាយបត្រ</p>
-  <a href="https://t.me/Bamerannbot" class="tg-button" target="_blank">ចូលទៅ Telegram Bot</a>
-  <br>
-  <button class="close-btn" onclick="closeQR()">បិទ</button>
-</div>
-
-<footer>
-  &copy; 2025 ហាងលក់ឥវ៉ាន់។ រក្សាសិទ្ធិគ្រប់យ៉ាង។
-</footer>
-
 </body>
 </html>
